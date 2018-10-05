@@ -1,6 +1,6 @@
 import * as types from './types'
 import { Actions } from 'react-native-router-flux'
-
+import { AsyncStorage } from 'react-native'
 
 function setFetching(value) {
     return {
@@ -22,14 +22,25 @@ export function setItem(value) {
 }
 export function fetchComicsList() {
     return (dispatch, getState, api) => {
-        console.log("Actions fetchComicsList called")
-        dispatch(setFetching(true))
+
+        //recover from asyncstorage to improve performance
+        AsyncStorage.getItem('comicsList', (error, result) => {
+            if(result && !error) {
+                console.log('read from asyncstorage')
+                const comicsList = JSON.parse(result)
+                dispatch(setList(comicsList))
+            } else {
+                dispatch(setFetching(true))
+            }
+        })
+
         api
             .fetchComics()
             .then(res => {
                 console.log("fetchComicsList res: ", res)
                 dispatch(setFetching(false))
                 dispatch(setList(res.data.data.results))
+                AsyncStorage.setItem('comicsList', JSON.stringify(res.data.data.results))
             })
             .catch(err => {
                 dispatch(setFetching(false))
