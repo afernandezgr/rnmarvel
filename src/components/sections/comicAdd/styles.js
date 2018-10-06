@@ -8,7 +8,7 @@ export default StyleSheet.create({
         borderWidth: 1,
         borderColor: 'rgb(80,80,80)',
         borderRadius: 15,
-        height: 250,
+        height: 200,
         width: '100%'
     },
     image: {
@@ -22,7 +22,7 @@ export default StyleSheet.create({
         position: 'absolute',
         top: '50%',
         textAlign: 'center',
-        left: 0,
-        right: 0
+        left: 25,
+        right: 25
     }
 })

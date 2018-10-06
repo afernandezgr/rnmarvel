@@ -21,6 +21,7 @@ export default class extends React.Component {
             }
         };
     }
+
     _validateForm() {
         const { title, description, image } = this.state
         console.log("Title: " + title + " - Description: " + description + " - Image: " + image)
@@ -30,6 +31,8 @@ export default class extends React.Component {
             return false
         }
     }
+
+
     _onSubmit() {
         if (this._validateForm()) {
             const { title, description, image } = this.state
@@ -57,7 +60,6 @@ export default class extends React.Component {
         });
     }
    
-
     _renderTextInput(label, key, placeholder = '', heightTextInput) {
         return (
             <TextInput
@@ -70,7 +72,6 @@ export default class extends React.Component {
         )
     }
     _renderImageInput() {
-
         const imageUri = this.state.image ? this.state.image.preview : null
         const imageLabel = this.state.image ? 'Click to choose another image' : 'Click to chose image*'
         return (
@@ -85,6 +86,7 @@ export default class extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+                
                 <View style={{ padding: 20, paddingTop: 40 }}>
                     {this._renderTextInput('Title: *', 'title', 'Comic name',40)}
                 </View>

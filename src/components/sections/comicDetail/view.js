@@ -8,54 +8,47 @@ export default class extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            imageExpanded: true,
-            animatedHeight: new Animated.Value(400),
-            marginTopText: 0
-        }
-    }
-    _onShowImage() {
-        console.log("show animatedHeight value: " + this.state.animatedHeight._value)
-        if (this.state.imageExpanded) {
-            Animated.timing(
-                this.state.animatedHeight,
-                {
-                    toValue: 0,
-                    duration: 500,
-                }
-            ).start()
-            this.setState({ imageExpanded: false })
-            this.setState({ marginTopText: 40 })
-        }
-        else {
-            Animated.timing(
-                this.state.animatedHeight,
-                {
-                    toValue: 400,
-                    duration: 1500,
-                }
-            ).start()
-            this.setState({ imageExpanded: true })
-            this.setState({ marginTopText: 0 })
-        }
+
+        this.springValue = new Animated.Value(0.3)
+
     }
 
+    spring(){
+      this.springValue.setValue(0.3)
+      Animated.spring(
+                      this.springValue,
+                       {
+                        toValue: 1,
+                        friction: 1,
+                        tension: 1
+                       })
+              .start()
+    }
+
+    
     render() {
         const { comic } = this.props
         const image = comic && comic.thumbnail.path ? { uri: comic.thumbnail.path + '.' + comic.thumbnail.extension } : null
         const title = comic && comic.title ? comic.title : ''
         const description = comic && comic.description ? comic.description : ''
-
+  
         return (
             <View style={styles.comicContainer}>
-                <Animated.Image source={image} resizeMode={'contain'} style={[styles.image, { height: this.state.animatedHeight }]} />
+                 
+                <Animated.Image
+                     resizeMode={'contain'}
+                     style={[ styles.image, {transform: [{scale: this.springValue}]} ]}
+                     source={image}
+                     onLoadEnd={this.spring.bind(this)}
+                     />
+
                 <TouchableOpacity style={styles.dataContainer} onPress={() => this._onShowImage()}>
                     <View>
                         <Text style={{ color: 'white' }}>{title}</Text>
                     </View>
                 </TouchableOpacity>
 
-                <Text style={[styles.description, { marginTop: this.state.marginTopText }]}>{description}</Text>
+                <Text style={[styles.description, { marginTop: 5 }]}>{description}</Text>
 
             </View>
         )

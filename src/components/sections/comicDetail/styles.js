@@ -31,6 +31,6 @@ export default StyleSheet.create({
         padding: 12,
         textAlign: 'justify',
         backgroundColor: 'rgb(52,52,52)',
-        height: 200
+        height: 300
     }
 })

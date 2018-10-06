@@ -13,3 +13,7 @@ export function fetchComics() {
 
 
 }
+
+export function postComic(data){
+    //not impemented, not allowd in API Marvel
+}

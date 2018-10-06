@@ -1,13 +1,14 @@
 import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
     buttonContainer: {
-        backgroundColor: 'rgb(80,80,80)',
-        padding: 20, alignItems: 'center',
+        backgroundColor: 'rgb(250,250,250)',
+        padding: 20, 
+        alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 14,
+        borderRadius: 50,
     },
     buttonText: {
         fontWeight: '600',
-        color: 'white'
+        color: 'grey'
     }
 }) 
