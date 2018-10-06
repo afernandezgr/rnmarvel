@@ -7,18 +7,19 @@ export function configureAxios() {
 }
 
 export function fetchComics() {
-    const url = '/v1/public/comics?format=hardcover&orderBy=-onsaleDate&limit=' + Commons.PAGESIZE +'&apikey=' + Commons.MARVELAPIKEY
+    const url = '/v1/public/comics?format=hardcover&orderBy=-onsaleDate&limit=' + Commons.PAGESIZE + '&apikey=' + Commons.MARVELAPIKEY
     console.log("URL: ", url)
     return axios.get(url)
 
 
 }
 
-export function postComic(data){
+export function postComic(data) {
     //not allowd in API Marvel
-   
-    //will be similar to this
-    /* const url = '/v1/public/comics?apikey=' + Commons.MARVELAPIKEY
+
+    //will be similar to this, fake method
+
+    /* const url = '/v1/public/comics/${data.id}?apikey=' + Commons.MARVELAPIKEY
     return axios.post(url, data)
     .then((response) => {
         return response.data

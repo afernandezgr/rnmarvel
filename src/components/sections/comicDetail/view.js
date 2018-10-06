@@ -13,34 +13,34 @@ export default class extends React.Component {
 
     }
 
-    spring(){
-      this.springValue.setValue(0.3)
-      Animated.spring(
-                      this.springValue,
-                       {
-                        toValue: 1,
-                        friction: 1,
-                        tension: 1
-                       })
-              .start()
+    spring() {
+        this.springValue.setValue(0.3)
+        Animated.spring(
+            this.springValue,
+            {
+                toValue: 1,
+                friction: 1,
+                tension: 1
+            })
+            .start()
     }
 
-    
+
     render() {
         const { comic } = this.props
         const image = comic && comic.thumbnail.path ? { uri: comic.thumbnail.path + '.' + comic.thumbnail.extension } : null
         const title = comic && comic.title ? comic.title : ''
-        const description = comic && comic.description ? comic.description : ''
-  
+        const description = comic && comic.description && comic.description != '' ? comic.description : 'No description available'
+
         return (
             <View style={styles.comicContainer}>
-                 
+
                 <Animated.Image
-                     resizeMode={'contain'}
-                     style={[ styles.image, {transform: [{scale: this.springValue}]} ]}
-                     source={image}
-                     onLoadEnd={this.spring.bind(this)}
-                     />
+                    resizeMode={'contain'}
+                    style={[styles.image, { transform: [{ scale: this.springValue }] }]}
+                    source={image}
+                    onLoadEnd={this.spring.bind(this)}
+                />
 
                 <TouchableOpacity style={styles.dataContainer}>
                     <View>

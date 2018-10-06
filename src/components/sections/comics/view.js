@@ -8,7 +8,7 @@ import { Actions } from 'react-native-router-flux'
 import * as Commons from '../../../commons'
 
 class Comics extends Component {
- 
+
     componentDidMount() {
         this.props.fetchComicsList()
     }
@@ -29,7 +29,7 @@ class Comics extends Component {
         }
         return (
             <View style={{ alignItems: 'center', justifyContent: 'center', position: 'absolute', top: 0, left: 0, bottom: 0, right: 0, backgroundColor: 'rbg(10,10,10)' }}>
-                <ActivityIndicator  size="large" color={'white'} animating={true} />
+                <ActivityIndicator size="large" color={'white'} animating={true} />
             </View>
 
         )
@@ -55,7 +55,7 @@ const mapStateToProps = (state) => {
     console.log("state.comics.item: ", state.comics.item)
     return {
         isFetching: state.comics.isFetching,
-        list: state.comics.list, 
+        list: state.comics.list,
     }
 }
 const mapDispatchToProps = (dispatch, props) => {
