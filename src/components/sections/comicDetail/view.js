@@ -10,7 +10,6 @@ export default class extends React.Component {
         super(props)
 
         this.springValue = new Animated.Value(0.3)
-
     }
 
     spring() {

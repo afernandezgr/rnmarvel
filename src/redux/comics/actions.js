@@ -20,8 +20,12 @@ export function setItem(value) {
         value
     }
 }
+
+
 export function fetchComicsList() {
     return (dispatch, getState, api) => {
+
+
 
         //recover from asyncstorage to improve performance after first execution
         AsyncStorage.getItem('comicsList', (error, result) => {
@@ -48,6 +52,8 @@ export function fetchComicsList() {
             })
     }
 }
+
+
 
 export function postComic(data) {
 

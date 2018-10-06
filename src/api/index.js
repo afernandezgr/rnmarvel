@@ -7,11 +7,9 @@ export function configureAxios() {
 }
 
 export function fetchComics() {
-    const url = '/v1/public/comics?format=hardcover&orderBy=-onsaleDate&limit=' + Commons.PAGESIZE + '&apikey=' + Commons.MARVELAPIKEY
+    const url = '/v1/public/comics?format=hardcover&orderBy=-onsaleDate&limit=' + Commons.COMIC_LIST_OFFSET + '&apikey=' + Commons.MARVELAPIKEY
     console.log("URL: ", url)
     return axios.get(url)
-
-
 }
 
 export function postComic(data) {

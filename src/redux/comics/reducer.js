@@ -1,15 +1,19 @@
 import * as types from './types'
 const initialState = {
-    isFetching: false, 
+    isFetching: false,
     list: [],
     item: null,
+    offset: 0,
+    total: 0,
 }
+
 export default function reducer(state = initialState, action = {}) {
     switch (action.type) {
         case types.COMICS_UPDATE_LIST:
             return {
                 ...state,
                 list: action.value,
+                total: action.total
             };
         case types.COMICS_SET_FETCHING:
             return {
@@ -21,7 +25,7 @@ export default function reducer(state = initialState, action = {}) {
                 ...state,
                 item: action.value,
             };
-        default: 
+        default:
             return state;
     }
 }

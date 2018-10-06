@@ -9,6 +9,8 @@ import * as Commons from '../../../commons'
 
 class Comics extends Component {
 
+
+
     componentDidMount() {
         this.props.fetchComicsList()
     }
@@ -23,6 +25,7 @@ class Comics extends Component {
             />
         )
     }
+
     _renderActivityIndicator() {
         if (!this.props.isFetching) {
             return null
@@ -34,6 +37,8 @@ class Comics extends Component {
 
         )
     }
+
+
     render() {
 
         return (
