@@ -42,7 +42,7 @@ export default class extends React.Component {
                      onLoadEnd={this.spring.bind(this)}
                      />
 
-                <TouchableOpacity style={styles.dataContainer} onPress={() => this._onShowImage()}>
+                <TouchableOpacity style={styles.dataContainer}>
                     <View>
                         <Text style={{ color: 'white' }}>{title}</Text>
                     </View>

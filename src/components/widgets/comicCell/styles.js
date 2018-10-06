@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native'
 const { height, width } = Dimensions.get('window')
 export default StyleSheet.create({
     cellContainer: {
-        width: '50%',
+        width: '100%',
         height: 250,
         backgroundColor: 'rgb(20,20,20)',
         paddingHorizontal: 10,

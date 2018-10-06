@@ -17,7 +17,7 @@ Consiste en crear una aplicación de haciendo uso de React Native con los sigui
 
 ### Instalación:
 * Para realizar la práctica se han utilizado dos componentes adicionales:
-	* [React-native-image-picker](https://github.com/react-community/react-native-image-picker), para la gestión de las imágenes al momento de crear un nuevo personaje.
+	* [React-native-image-picker](https://github.com/react-community/react-native-image-picker), para la gestión de las imágenes al momento de crear un nuevo comic.
 	
 * Para instalar la aplicación, tras clonar o descargar el proyecto hay que ejecutar el comando `npm install`, con ello se descargarán todas las dependencias necesarias para ejecutar la app.
 

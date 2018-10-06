@@ -23,7 +23,7 @@ const sceneDefaultStyles = {
 
 const RightButton = props => (
     <TouchableOpacity style={{ padding: 10 }} onPress={() => Actions.comicAdd()}>
-        <Text style={{ color: 'white', fontWeight: 'bold' }}>{'Add'}</Text>
+        <Text style={{ color: 'white', fontWeight: '800', fontSize: 24 }}>{'+'}</Text>
     </TouchableOpacity>
 )
 
@@ -50,7 +50,7 @@ export default class App extends Component {
                             {...sceneDefaultStyles} />
                         <Scene key="comicAdd"
                             component={ComicAdd}
-                            title={'Add'}
+                            title={'Add Comic'}
                             {...sceneDefaultStyles} />
                     </Stack>
                 </Router>

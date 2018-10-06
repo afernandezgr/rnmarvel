@@ -54,7 +54,7 @@ export function postComic(data) {
 
     return (dispatch, getState, api) => {
 
-       //Persistance vía API not allow by Marvel API
+       //Persistance vía API not allow in Marvel API
        //Below I show the method we could use to persist the info regarded in the form
        /*  const comic = getState().comicsList.comic
         if (!data || !comic){

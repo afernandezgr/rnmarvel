@@ -16,7 +16,7 @@ export default class extends Component {
                <Image
                     source={image}
                     style={{ width: '100%', height: '100%'}}
-                    resizeMode={'stretch'}
+                    resizeMode={'cover'}
                 />
             </TouchableOpacity>
         )
