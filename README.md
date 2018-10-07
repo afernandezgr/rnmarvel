@@ -18,9 +18,23 @@ Consiste en crear una aplicación de haciendo uso de React Native con los sigui
 ### Instalación:
 * Para realizar la práctica se han utilizado dos componentes adicionales:
 	* [React-native-image-picker](https://github.com/react-community/react-native-image-picker), para la gestión de las imágenes al momento de crear un nuevo comic.
+	* [React-native-router-flux](https://github.com/RNRF/react-native-router-flux), enrutador declarativo para React Native
 	
 * Para instalar la aplicación, tras clonar o descargar el proyecto hay que ejecutar el comando `npm install`, con ello se descargarán todas las dependencias necesarias para ejecutar la app.
 
 * La aplicación está en modo debug, por tanto para ejectutarla debemos arrancar el servidor de Node, con el comando `npm start`.
 
 * Para ejecutarla en iOS basta con ejecutar `react-native run-ios` o en Android `react-native run-android`
+
+### Demo:
+
+* Demo iOS:
+
+![](https://thumbs.gfycat.com/DeterminedFarflungGuernseycow-size_restricted.gif)
+
+* Demo Android:
+
+![](https://thumbs.gfycat.com/DeterminedFarflungGuernseycow-size_restricted.gif)
+
+
+
